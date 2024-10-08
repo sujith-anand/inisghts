@@ -5,57 +5,107 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Profile Sharing</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  <link rel="stylesheet" href="styles.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+  <style>
+    body {
+      font-family: Poppins, sans-serif;
+      background-color: #e7e7e7; /* Blue-gray background */
+      color: #100f18; /* Default text color */
+      display: flex;
+      flex-direction: column;
+      min-height: 100vh; /* Full viewport height */
+    }
+
+    header {
+      border-bottom: 1px solid #100f18;
+      padding-bottom: 10px;
+    }
+
+    .name {
+      font-size: 20px;
+      color: #007bff;
+    }
+
+    .border {
+      border: 2px solid #fff; /* White border for containers */
+      border-radius: 4px;
+    }
+
+    .bg-light {
+      background-color: #ffffff !important; /* White background for containers */
+      color: #333; /* Dark text color */
+    }
+
+    footer {
+      background-color: white;
+      color: #007bff;
+      padding: 10px 0; /* Add padding to footer */
+      margin-top: auto; /* Stick footer to the bottom */
+    }
+
+    .chart-container {
+      position: relative;
+      height: 300px; /* Fixed height for the chart */
+      width: 100%; /* Ensure full width */
+    }
+
+    .section-spacing {
+      margin-bottom: 20px; /* Spacing between sections */
+    }
+
+    /* Ensure the card width does not cause wrapping */
+    .no-wrap {
+      display: flex;
+      flex-wrap: nowrap; /* Prevent wrapping */
+    }
+  </style>
 </head>
 <body>
-  <div class="container my-4">
+  <div class="container-xl my-4 
+  " style="
+    background: white;
+    padding: 2.5rem;
+">
     <header class="d-flex justify-content-between align-items-center border-bottom pb-3">
-      <h1>Profile Sharing</h1>
-      <p class="name font-weight-bold">Sujith Anand</p>
+      <h3> Sujith Anand  </h1>
+      <p class="name font-weight-bold">Insights Discovery® Cheat Sheet</p>
     </header>
     
-    <div class="row mt-4">
-      <!-- Chart Section -->
-      <div class="col-md-4 text-center">
-        <img src="path_to_bar_chart_image" alt="Bar Chart" class="img-fluid">
+    <div class="row section-spacing">
+      <!-- Bar Chart Section -->
+      <div class="col-md-6 text-center">
+        <div class="chart-container">
+          <canvas id="barChart"></canvas>
+        </div>
       </div>
       
-      <!-- Profile Info Section -->
-      <div class="col-md-4">
-        <p><strong>Type:</strong> Reforming Observer (Classic)</p>
-        <p><strong>Wheel Position:</strong> 35</p>
-        <img src="path_to_wheel_image" alt="Profile Wheel" class="img-fluid">
-      </div>
-
       <!-- Defining Statement Section -->
-      <div class="col-md-4 bg-light p-3 border">
-        <p><strong>Defining Statement:</strong> (add summary statements based on your profile and/or add your own statements)</p>
+      <div class="col-md-6 bg-light p-3 border">
+        <p><strong>Defining Statement:</strong> </p>
         <ul>
-          <li>Sujith doesn’t not take criticism personally, and is often surprised to discover that others may be hurt or offended by the constructive criticism he can offer.</li>
-          <li>Sujith is analytical, impersonal and interested in underlying principles.</li>
-          <li>Displays a very little emotional response to the situation and prefers logic over emotion.</li>
+          <li>Sujith doesn’t take criticism personally and is often surprised to discover that others may be hurt or offended by the constructive criticism he can offer.</li>
+          <li>Sujith is analytical, impersonal, and interested in underlying principles.</li>
+          <li>Displays very little emotional response to situations and prefers logic over emotion.</li>
           <li>Will prefer to be reserved and distant until he gets to know someone well.</li>
         </ul>
       </div>
     </div>
 
-    <div class="row mt-4">
+    <div class="row section-spacing no-wrap">
       <!-- Statements Section 1 -->
-      <div class="col-md-4 bg-light p-3 border">
-        <h3>My Value To The Team</h3>
-        <p><em>(choose 2-4 statements)</em></p>
+      <div class="col-md-4 bg-light p-2 border">
+        <h5>My Value To The Team</h5>
         <ul>
           <li>Seeks and provides attention to detail.</li>
           <li>Helps ensure consistency in team output.</li>
           <li>Identifies the key elements of important situations.</li>
-          <li>Sometimes takes over the work of others rather than leave important tasks undone, or done poorly.</li>
+          <li>Sometimes takes over the work of others rather than leave important tasks undone or done poorly.</li>
         </ul>
       </div>
 
       <!-- Statements Section 2 -->
-      <div class="col-md-4 bg-light p-3 border">
-        <h3>When Communicating With Me DO ...</h3>
-        <p><em>(choose 2-4 statements)</em></p>
+      <div class="col-md-4 bg-light p-2 border mx-1">
+        <h5>When Communicating With Sujith DO ...</h5>
         <ul>
           <li>Be precise and detailed.</li>
           <li>Be punctual.</li>
@@ -65,25 +115,73 @@
       </div>
 
       <!-- Statements Section 3 -->
-      <div class="col-md-4 bg-light p-3 border">
-        <h3>When Communicating With Me DON’T ...</h3>
-        <p><em>(choose 2-4 statements)</em></p>
+      <div class="col-md-4 bg-light p-2 border">
+        <h5>When Communicating With Sujith DON’T ...</h5>
         <ul>
           <li>Waste time with irrelevancies.</li>
           <li>Be vague about facts and statistics.</li>
-          <li>Come unprepared and disorganised.</li>
+          <li>Come unprepared and disorganized.</li>
           <li>Cut him off before he has finished.</li>
         </ul>
       </div>
     </div>
 
-    <footer class="text-center bg-primary text-white py-2 mt-4">
+    <footer class="text-center py-2 mt-4">
       <p>© The Insights Group Ltd, 2009-2020. All rights reserved.</p>
     </footer>
   </div>
 
-  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@1.16.1/dist/umd/popper.min.js"></script>
-  <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script>
+    const ctx = document.getElementById('barChart').getContext('2d');
+    const barChart = new Chart(ctx, {
+      type: 'bar',
+      data: {
+        labels: ['Blue [95%]', 'Green [34%]', 'Yellow [24%]', 'Red [78%]'],
+        datasets: [{
+          label: 'Profile Scores',
+          data: [5.68, 2.04, 1.44, 4.68],
+          backgroundColor: ['#007bff', '#28a745', '#ffc107', '#dc3545'],
+          borderWidth: 1
+        }]
+      },
+      options: {
+        responsive: true,
+        maintainAspectRatio: false,
+        scales: {
+          x: {
+            title: {
+              display: true,
+              text: 'Profile Colors'
+            }
+          },
+          y: {
+            beginAtZero: true,
+            max: 6,
+            ticks: {
+              callback: function(value) {
+                let percentages = {
+                  0: '0',
+                  1.5: '1.5',
+                  3: '3',
+                  4.5: '4.5',
+                  6: '6'
+                };
+                return percentages[value] || '';
+              }
+            },
+            title: {
+              display: true,
+              text: 'Score'
+            }
+          }
+        },
+        plugins: {
+          legend: {
+            display: false
+          }
+        }
+      }
+    });
+  </script>
 </body>
 </html>
