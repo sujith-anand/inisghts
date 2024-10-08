@@ -1,0 +1,26 @@
+/* styles.css */
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+}
+
+h1 {
+  font-size: 2em;
+  margin: 0;
+}
+
+header {
+  border-bottom: 5px solid black;
+}
+
+.bg-light {
+  background-color: #f9f9f9 !important;
+}
+
+footer {
+  font-size: 0.9em;
+}
+
+.name {
+  font-size: 1.5em;
+}
